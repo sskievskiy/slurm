@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-test
+  labels:
+    app: ngideployment-testnx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: deployment-test
+  template:
+    metadata:
+      labels:
+        app: deployment-test
+    spec:
+      containers:
+      - name: deployment-test
+        image: debian:jessie
+        command: ["/bin/sh"]
+        args: ['-c', 'while true; do echo "Hello, ${USERNAME}!"; sleep 10; done']
+        env:
+        - name: USERNAME
+          value: Sergey
+          

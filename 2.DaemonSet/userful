@@ -1,0 +1,2 @@
+kubectl create namespace myproxy
+kubectl get pod -o wide --namespace=myproxy
