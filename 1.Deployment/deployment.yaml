@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: deployment-test
   labels:
-    app: ngideployment-testnx
+    app: deployment-test
 spec:
   replicas: 1
   selector:

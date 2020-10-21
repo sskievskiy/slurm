@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-test
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  rules:
+  - host: ingress-test.homelab.local
+    http:
+      paths:
+      - path: /1
+        backend:
+          serviceName: ingress-test-1
+          servicePort: 80
+      - path: /2
+        backend:
+          serviceName: ingress-test-2
+          servicePort: 80
